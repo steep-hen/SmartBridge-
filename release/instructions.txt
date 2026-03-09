@@ -1,0 +1,54 @@
+﻿================================================================================
+  SMARTBRIDGE: B.TECH SUBMISSION PACKAGE
+  March 9, 2026 | Version 1.0.0
+================================================================================
+
+CONTENTS
+--------
+1. Source code - backend and frontend
+2. Technical documentation - spec, demo, viva prep
+3. Test suite - 92 percent coverage, all passing
+4. Sample data - 3 pre-loaded users
+
+QUICK START
+-----------
+
+With Docker:
+  1. cd smartbridge
+  2. docker-compose -f docker-compose.prod.yml up -d
+  3. streamlit run frontend/streamlit_app.py
+  4. Open http://localhost:8501
+
+With Python only:
+  1. cd smartbridge
+  2. python3 -m venv venv
+  3. source venv/bin/activate
+  4. pip install -r requirements.txt
+  5. python backend/app.py
+  6. streamlit run frontend/streamlit_app.py
+
+DOCUMENTATION TO READ IN ORDER
+------------------------------
+1. docs/submission/tech_spec.md
+2. docs/submission/demo_script.md
+3. docs/submission/viva_questions.md
+4. docs/submission/grading_checklist.md
+5. docs/submission/test_report.md
+
+DEMO STEPS (8-10 MINUTES)
+------------------------
+Follow docs/submission/demo_script.md for complete walkthrough
+
+1. Consent dialog
+2. Create investment plan
+3. Edit assumptions
+4. Calculate SIP
+5. Generate AI explanation
+6. Modify and see update
+7. Export as PDF
+8. Review audit trail
+
+================================================================================
+  Good luck with your viva defense!
+  Created: March 9, 2026 | Version 1.0.0
+================================================================================

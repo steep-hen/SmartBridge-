@@ -28,15 +28,24 @@ from backend.config import settings
 logger = logging.getLogger(__name__)
 
 # Create SQLAlchemy engine
-# - pool_pre_ping: Test connection before using (handles closed DB connections)
-# - echo: Log SQL statements in debug mode
-engine = create_engine(
-    settings.db_url,
-    pool_pre_ping=True,
-    echo=settings.debug,
-    pool_size=20,
-    max_overflow=40,
-)
+# For SQLite: no connection pooling needed
+# For PostgreSQL: use pool_pre_ping and connection pooling
+if settings.db_url.startswith("sqlite"):
+    # SQLite configuration (development/testing)
+    engine = create_engine(
+        settings.db_url,
+        connect_args={"check_same_thread": False},
+        echo=settings.debug,
+    )
+else:
+    # PostgreSQL configuration (production)
+    engine = create_engine(
+        settings.db_url,
+        pool_pre_ping=True,
+        echo=settings.debug,
+        pool_size=20,
+        max_overflow=40,
+    )
 
 # Session factory for creating new database sessions
 SessionLocal = sessionmaker(
@@ -46,6 +55,7 @@ SessionLocal = sessionmaker(
 )
 
 logger.info(f"Database engine created: {settings.environment}")
+logger.info(f"Using database: {settings.db_url.split('/')[-1]}")
 
 
 def get_session() -> Generator[Session, None, None]:

@@ -1,0 +1,261 @@
+{
+  "test_status": "PASSED",
+  "user_id": "c549802e-c742-4de6-8b0e-ff6eca2bb22d",
+  "report": {
+    "report_id": "c549802e-c742-4de6-8b0e-ff6eca2bb22d_2026-03-08T18:36:41.697204",
+    "report_generated_at": "2026-03-08T18:36:41.697204",
+    "user_profile": {
+      "user_id": "c549802e-c742-4de6-8b0e-ff6eca2bb22d",
+      "email": "integration-test@example.com",
+      "name": "Integration Test User",
+      "country": "USA",
+      "gender": null,
+      "date_of_birth": null,
+      "member_since": "2026-03-08T18:36:41.676596"
+    },
+    "financial_snapshot": {
+      "available": true,
+      "period": "2024-01",
+      "total_income": 6000.0,
+      "total_expenses": 3500.0,
+      "total_savings": 2000.0,
+      "total_investments": 25000.0,
+      "net_worth": 80000.0,
+      "last_updated": "2026-03-08T18:36:41.678601"
+    },
+    "computed_metrics": {
+      "savings_rate": 33.33,
+      "debt_to_income_ratio": 0.0,
+      "emergency_fund_months": 0.57,
+      "investment_ratio": 0.3125,
+      "monthly_income": 6000.0,
+      "monthly_expenses": 3500.0,
+      "monthly_savings": 2000.0
+    },
+    "holdings_summary": {
+      "count": 3,
+      "total_cost_basis": 21500.0,
+      "total_current_value": 25000.0,
+      "total_unrealized_gain_loss": 3500.0,
+      "gain_loss_percentage": 16.28,
+      "holdings": [
+        {
+          "ticker": "VTI",
+          "asset_type": "ETF",
+          "quantity": 50.0,
+          "average_cost_per_unit": 200.0,
+          "total_cost": 10000.0,
+          "current_value": 12500.0,
+          "unrealized_gain_loss": 2500.0,
+          "gain_loss_percentage": 25.0
+        },
+        {
+          "ticker": "BND",
+          "asset_type": "ETF",
+          "quantity": 100.0,
+          "average_cost_per_unit": 100.0,
+          "total_cost": 10000.0,
+          "current_value": 10000.0,
+          "unrealized_gain_loss": 0.0,
+          "gain_loss_percentage": 0.0
+        },
+        {
+          "ticker": "AAPL",
+          "asset_type": "EQUITY",
+          "quantity": 10.0,
+          "average_cost_per_unit": 150.0,
+          "total_cost": 1500.0,
+          "current_value": 2500.0,
+          "unrealized_gain_loss": 1000.0,
+          "gain_loss_percentage": 66.67
+        }
+      ]
+    },
+    "goals_analysis": {
+      "count": 3,
+      "goals": [
+        {
+          "goal_id": "33c13d67-9503-4952-bfca-65f654a66b65",
+          "goal_name": "Emergency Fund (6 months)",
+          "goal_type": "SAVINGS",
+          "status": "ACTIVE",
+          "priority": "HIGH",
+          "target_amount": 21000.0,
+          "current_amount": 8000.0,
+          "remaining_amount": 13000.0,
+          "progress_percentage": 38.1,
+          "target_date": "2027-03-09",
+          "months_remaining": 12,
+          "required_monthly_sip": 1060.11,
+          "projected_final_balance": 8161.47,
+          "achievable_with_planned_contribution": false,
+          "projection_samples": [
+            {
+              "month": 0,
+              "projected_balance": 8000.0
+            },
+            {
+              "month": 3,
+              "projected_balance": 8040.07
+            },
+            {
+              "month": 6,
+              "projected_balance": 8080.33
+            },
+            {
+              "month": 9,
+              "projected_balance": 8120.8
+            },
+            {
+              "month": 12,
+              "projected_balance": 8161.47
+            }
+          ]
+        },
+        {
+          "goal_id": "9e7498a0-278c-4bc3-b514-ea7036840bfa",
+          "goal_name": "House Down Payment",
+          "goal_type": "SAVINGS",
+          "status": "ACTIVE",
+          "priority": "HIGH",
+          "target_amount": 100000.0,
+          "current_amount": 25000.0,
+          "remaining_amount": 75000.0,
+          "progress_percentage": 25.0,
+          "target_date": "2029-03-08",
+          "months_remaining": 36,
+          "required_monthly_sip": 1981.53,
+          "projected_final_balance": 26544.59,
+          "achievable_with_planned_contribution": false,
+          "projection_samples": [
+            {
+              "month": 0,
+              "projected_balance": 25000.0
+            },
+            {
+              "month": 9,
+              "projected_balance": 25377.51
+            },
+            {
+              "month": 18,
+              "projected_balance": 25760.72
+            },
+            {
+              "month": 27,
+              "projected_balance": 26149.72
+            },
+            {
+              "month": 36,
+              "projected_balance": 26544.59
+            }
+          ]
+        },
+        {
+          "goal_id": "4a49f3c6-847a-4ac8-b0db-df975d9f46a1",
+          "goal_name": "Retirement Fund",
+          "goal_type": "INVESTMENTS",
+          "status": "ACTIVE",
+          "priority": "MEDIUM",
+          "target_amount": 1000000.0,
+          "current_amount": 80000.0,
+          "remaining_amount": 920000.0,
+          "progress_percentage": 8.0,
+          "target_date": "2061-02-28",
+          "months_remaining": 425,
+          "required_monthly_sip": 28.15,
+          "projected_final_balance": 947654.89,
+          "achievable_with_planned_contribution": false,
+          "projection_samples": [
+            {
+              "month": 0,
+              "projected_balance": 80000.0
+            },
+            {
+              "month": 106,
+              "projected_balance": 148200.11
+            },
+            {
+              "month": 212,
+              "projected_balance": 274540.92
+            },
+            {
+              "month": 318,
+              "projected_balance": 508587.44
+            },
+            {
+              "month": 425,
+              "projected_balance": 947654.89
+            }
+          ]
+        }
+      ],
+      "achievement_summary": {
+        "achievable_count": 0,
+        "total_goals": 3,
+        "total_progress_percentage": 23.7
+      }
+    },
+    "overall_health_score": 80,
+    "assumptions_used": {
+      "inflation_rate": 0.03,
+      "discount_rate": 0.05,
+      "expected_equity_return": 0.07,
+      "expected_bond_return": 0.04,
+      "expected_cash_return": 0.02
+    }
+  },
+  "advice": {
+    "actions": [
+      {
+        "title": "Build Emergency Fund to 6 Months",
+        "priority": 1,
+        "rationale": "Establish financial resilience before aggressive investing. Target 6 months of living expenses in accessible savings."
+      },
+      {
+        "title": "Review Asset Allocation",
+        "priority": 2,
+        "rationale": "Ensure diversification across asset classes appropriate for your risk tolerance and time horizon."
+      },
+      {
+        "title": "Automate Savings and Investment",
+        "priority": 3,
+        "rationale": "Set up automatic transfers to invest regularly (dollar-cost averaging) and reduce behavioral biases."
+      }
+    ],
+    "instruments": [
+      {
+        "name": "Low-Cost Total Market Index Fund (e.g., VTI, VTSAX)",
+        "type": "ETF",
+        "allocation_pct": 40.0,
+        "rationale": "Provides broad equity exposure with minimal fees. Core holding for most portfolios."
+      },
+      {
+        "name": "Bond Index Fund (e.g., BND, VBTLX)",
+        "type": "BOND",
+        "allocation_pct": 30.0,
+        "rationale": "Reduces volatility and provides downside protection. Appropriate for diversification."
+      },
+      {
+        "name": "High-Yield Savings or Money Market",
+        "type": "CASH",
+        "allocation_pct": 30.0,
+        "rationale": "Liquid reserves for emergency fund and near-term goals. Focus on FDIC-insured accounts."
+      }
+    ],
+    "risk_warning": "All investments carry risk, including potential loss of principal. Past performance does not guarantee future results. Consider consulting a financial advisor before making investment decisions. This advice is educational and not personalized financial guidance.",
+    "assumptions": {
+      "expected_annual_return": 0.06,
+      "inflation": 0.03
+    },
+    "sources": [
+      {
+        "id": "bogle_2003",
+        "text_snippet": "Low-cost, diversified index funds are the most reliable path to long-term wealth building for most investors."
+      },
+      {
+        "id": "markowitz_1952",
+        "text_snippet": "Portfolio diversification reduces risk by spreading investments across uncorrelated assets."
+      }
+    ]
+  }
+}

@@ -1,0 +1,217 @@
+"""Configuration Template for Forecasting Module.
+
+Copy to .env file in project root and update with your values.
+"""
+
+# ============================================================================
+# FORECASTING MODEL CONFIGURATION
+# ============================================================================
+
+# Default forecasting model: 'prophet' or 'arima'
+FORECAST_DEFAULT_MODEL=prophet
+
+# Number of months to forecast by default (1-24)
+FORECAST_DEFAULT_MONTHS=6
+
+# Confidence level for prediction intervals (0.80, 0.90, 0.95, 0.99)
+FORECAST_CONFIDENCE_LEVEL=0.95
+
+# Data aggregation: 'daily', 'weekly', or 'monthly'
+# Use 'monthly' for 5+ years of data for better performance
+FORECAST_AGGREGATION=daily
+
+# ============================================================================
+# CACHING CONFIGURATION
+# ============================================================================
+
+# Enable forecast result caching
+FORECAST_CACHE_ENABLED=true
+
+# Cache expiration time in minutes
+FORECAST_CACHE_MINUTES=60
+
+# Cache backend: 'memory' (in-process) or 'redis' (distributed)
+# FORECAST_CACHE_BACKEND=memory
+# REDIS_URL=redis://localhost:6379/0
+
+# ============================================================================
+# PERFORMANCE CONFIGURATION
+# ============================================================================
+
+# Request timeout in seconds
+FORECAST_REQUEST_TIMEOUT=30
+
+# Maximum batch size for bulk forecast operations
+FORECAST_BATCH_SIZE=100
+
+# Minimum historical data required (in days)
+FORECAST_MIN_HISTORY_DAYS=30
+
+# ============================================================================
+# PROPHET-SPECIFIC CONFIGURATION
+# ============================================================================
+
+# Prophet seasonality mode: 'additive' or 'multiplicative'
+PROPHET_SEASONALITY_MODE=additive
+
+# Prophet interval width (confidence level)
+# PROPHET_INTERVAL_WIDTH=0.95
+
+# ============================================================================
+# ARIMA-SPECIFIC CONFIGURATION
+# ============================================================================
+
+# ARIMA order (p, d, q)
+ARIMA_ORDER=1,1,1
+
+# ARIMA seasonal order (p, d, q, s) - use 0,0,0,0 for non-seasonal
+ARIMA_SEASONAL_ORDER=1,1,1,12
+
+# ============================================================================
+# DATABASE CONFIGURATION
+# ============================================================================
+
+# Database connection string
+# DATABASE_URL=postgresql://user:password@localhost:5432/smartbridge
+# DATABASE_URL=mysql://user:password@localhost:3306/smartbridge
+# DATABASE_URL=sqlite:///smartbridge.db
+
+# Enable forecast result persistence
+FORECAST_STORE_RESULTS=true
+
+# Retention period for forecast results (in days, 0 = unlimited)
+FORECAST_RETENTION_DAYS=0
+
+# ============================================================================
+# LOGGING CONFIGURATION
+# ============================================================================
+
+# Log level: DEBUG, INFO, WARNING, ERROR, CRITICAL
+LOG_LEVEL=INFO
+
+# Enable detailed forecast logging
+FORECAST_VERBOSE_LOGGING=false
+
+# Log file path
+LOG_FILE=logs/forecast.log
+
+# ============================================================================
+# SECURITY CONFIGURATION
+# ============================================================================
+
+# Enable authentication for forecast endpoints
+FORECAST_AUTH_REQUIRED=true
+
+# Rate limiting: max requests per minute per user
+FORECAST_RATE_LIMIT_PER_MINUTE=10
+
+# Enable API key authentication
+API_KEY_ENABLED=true
+API_KEY_HEADER=X-API-Key
+
+# ============================================================================
+# FEATURE FLAGS
+# ============================================================================
+
+# Enable scenario analysis endpoint
+ENABLE_SCENARIO_ANALYSIS=true
+
+# Enable forecast comparison feature
+ENABLE_FORECAST_COMPARISON=true
+
+# Enable recommendations engine
+ENABLE_RECOMMENDATIONS=true
+
+# Enable anomaly detection in transaction data
+ENABLE_ANOMALY_DETECTION=false
+
+# ============================================================================
+# MONITORING & ALERTS
+# ============================================================================
+
+# Enable Prometheus metrics
+ENABLE_METRICS=true
+
+# Alert when forecast accuracy (MAPE) exceeds threshold (%)
+FORECAST_ACCURACY_THRESHOLD=25
+
+# Alert when projected balance goes negative
+ALERT_NEGATIVE_BALANCE=true
+
+# ============================================================================
+# DEVELOPMENT/TESTING
+# ============================================================================
+
+# Enable debug mode (detailed error messages)
+DEBUG=false
+
+# Enable sample data generation (for testing without database)
+ENABLE_SAMPLE_DATA=true
+
+# Streamlit theme: 'dark' or 'light'
+STREAMLIT_THEME=dark
+
+# Run tests on startup
+RUN_TESTS_ON_STARTUP=false
+
+# ============================================================================
+# USAGE IN CODE
+# ============================================================================
+
+"""
+Import and use configuration:
+
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
+# Access configuration
+FORECAST_MODEL = os.getenv('FORECAST_DEFAULT_MODEL', 'prophet')
+FORECAST_MONTHS = int(os.getenv('FORECAST_DEFAULT_MONTHS', '6'))
+CACHE_ENABLED = os.getenv('FORECAST_CACHE_ENABLED', 'true').lower() == 'true'
+
+# Use in forecast function
+result = forecast_expenses_and_savings(
+    expense_transactions=expenses,
+    income_transactions=income,
+    model_type=FORECAST_MODEL,
+    forecast_months=FORECAST_MONTHS
+)
+"""
+
+# ============================================================================
+# ENVIRONMENT-SPECIFIC TEMPLATES
+# ============================================================================
+
+"""
+DEVELOPMENT (.env.development):
+FORECAST_DEFAULT_MODEL=arima
+FORECAST_AGGREGATION=daily
+FORECAST_CACHE_ENABLED=false
+DEBUG=true
+LOG_LEVEL=DEBUG
+ENABLE_SAMPLE_DATA=true
+
+PRODUCTION (.env.production):
+FORECAST_DEFAULT_MODEL=prophet
+FORECAST_AGGREGATION=monthly
+FORECAST_CACHE_ENABLED=true
+FORECAST_CACHE_MINUTES=120
+DEBUG=false
+LOG_LEVEL=INFO
+DATABASE_URL=postgresql://prod_user:password@prod_db:5432/smartbridge
+FORECAST_AUTH_REQUIRED=true
+API_KEY_ENABLED=true
+ENABLE_SAMPLE_DATA=false
+
+TESTING (.env.test):
+FORECAST_DEFAULT_MODEL=arima
+FORECAST_AGGREGATION=monthly
+FORECAST_CACHE_ENABLED=false
+DEBUG=true
+LOG_LEVEL=DEBUG
+DATABASE_URL=sqlite:///:memory:
+ENABLE_SAMPLE_DATA=true
+RUN_TESTS_ON_STARTUP=true
+"""
